@@ -11,7 +11,7 @@ Vue.config.productionTip = false
 
 Vue.use(LongdoMap, {     
   load: {         
-       apiKey: 'AIzaSyAsMQMpcepCRIT-7xEOQJNy0OIZjbxYhiQ'     
+       apiKey: ''     
   } 
 })
 
