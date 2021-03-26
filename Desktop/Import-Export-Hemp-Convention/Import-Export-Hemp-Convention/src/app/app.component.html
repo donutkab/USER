@@ -1,0 +1,75 @@
+<body>
+   <!-- <app-nav-menu></app-nav-menu> -->
+  <div class="container">
+    <router-outlet></router-outlet>
+ 
+
+    <!-- <form [formGroup]="myForm" (ngSubmit)="submit(myForm.value)">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h1 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <strong>ส่วนที่ 1 ข้อมูลผู้ขออนุญาต</strong>
+            </button>
+          </h1>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+            
+                <div class="card-body text-dark">
+            
+                    
+                        <div class="row mb-3" *ngFor="let topicnamelist of User">
+                            <label for="syslctaddr_thanameplace" class="col-sm-2 col-form-label">ชื่อผู้รับอนุญาต</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" readonly [(ngModel)]="User[0].name">
+                              </div>
+                        </div>
+             
+            
+                    
+     
+            
+                        
+              
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                       
+                </div>
+            </div>
+          </div>
+        </div>
+      
+       
+      </div>
+      </form> -->
+
+
+
+     <!-- <form #f="ngForm" (ngSubmit)="ClickAddDes(f)">
+        <div class="form-group row" >
+          <label for="IDENTIFY" class="col-sm-4 col-form-label">คำอธิบาย</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" id="IDENTIFY" required name="IDENTIFY" [(ngModel)]= "IDENTIFY" placeholder="หน้าที่"></textarea>
+          </div>
+
+
+          <div class="col-sm-8">
+            <textarea class="form-control" id="IDENTIFY2" required name="IDENTIFY2" [(ngModel)]= "IDENTIFY2" placeholder="หน้าที่"></textarea>
+          </div> 
+
+           <div class="col-sm-8">
+            <textarea class="form-control" id="IDENTIFY3" required name="IDENTIFY3" [(ngModel)]= "IDENTIFY3" placeholder="หน้าที่"></textarea>
+          </div> 
+
+
+       
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+          <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+        </div>
+      </form>     -->
+
+
+
+  </div>
+</body>

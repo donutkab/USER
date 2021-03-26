@@ -1,0 +1,422 @@
+
+<div class="row">
+<div class="col-md-12">คำขอรับใบอนุญาต นำเข้าหรือส่งออกซึ่งกัญชงในแต่ละครั้ง</div>   
+
+<form #f="ngForm" (ngSubmit)="ClickAddDes(f)">
+
+    <div class="row mt-3 mb-3">
+        <div class="col-2"   >
+            <p style="font-family: K2D;"><strong>เป็นผู้รับอนุญาต</strong></p>
+        </div>  
+        <div class="col-8">     
+            <label class="form-check-label" for="gridCheck" >
+                    {{topicnamelist}} 
+            </label>
+            <input type="text"  id="nameLicense" style="margin-left: 2%;" name="nameLicense" [(ngModel)]="nameLicense" disabled/>             
+        </div> 
+    </div> 
+
+    <div class="row mb-3 mt-3">
+        <label for="WRITE_AT" class="col-sm-2 col-form-label"><strong>เขียนที่</strong></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="WRITE_AT" name="WRITE_AT" [(ngModel)]="WRITE_AT">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-2">
+          <strong>วัน/เดือน/ปี </strong>
+        </div>
+        <div class="col-md-2 " style="widows: 100%;">
+          <input type="date" class="form-control" name="WRITE_DATE" [(ngModel)]="WRITE_DATE" /> 
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <!-- <span class="help-block" *ngIf="!myForm.get('date').valid
+              && myForm.get('date').touched">กรุณากรอกข้อมูลให้ครบถ้วน
+            </span> -->
+          </div>
+        </div>
+    </div>
+
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h1 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <strong>ส่วนที่ 1 ข้อมูลผู้ขออนุญาต</strong>
+            </button>
+          </h1>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div class="card-body text-dark">                  
+                        <div class="row mb-3">
+                            <label for="syslctaddr_thanameplace" class="col-sm-2 col-form-label">ชื่อผู้รับอนุญาต</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                              </div>
+                        </div>
+             
+            
+                        <div class="row mb-3">
+                            <label for="BSN_PREFIXNAME" class="col-sm-2 col-form-label" >ชื่อผู้ดำเนินกิจการ คือ</label>
+                            <div class="col-sm-1">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="First name" id="BSN_PREFIXNAME"  name="BSN_PREFIXNAME"   [(ngModel)]="BSN_PREFIXNAME" readonly>
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="First name" id="BSN_NAME_LASTNAME"  name="BSN_NAME_LASTNAME"   [(ngModel)]="BSN_NAME_LASTNAME" readonly>
+                            </div>
+                            <!-- <label for="txt_lastName" class="col-sm-2 col-form-label">นามสกุล</label>
+                            <div class="col">
+                              <input type="text" class="form-control" aria-label="Last name" name="txt_lastName" [(ngModel)]="txt_lastName" readonly>
+                            </div> -->
+                        </div>
+            
+                        <div class="row mb-3">
+                            <label for="IDENTIFY" class="col-sm-3 col-form-label">นิติบุคคล/บัตรประจำตัวผู้เสียภาษี เลขที่</label>
+                            <div class="col">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Identify Business" name="IDENTIFY" [(ngModel)]="IDENTIFY" readonly>
+                            </div>
+                            <label for="txt_registerCommunityCode" class="col-sm-2 col-form-label">รหัสทะเบียนวิสาหกิจชุมชน</label>
+                            <div class="col">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Register community code" name="txt_registerCommunityCode" [(ngModel)]="txt_registerCommunityCode" readonly>
+                            </div>
+                            <label for="txt_codeRegisterCommunity" class="col-sm-1 col-form-label">(ถ้ามี)</label>
+                        </div>
+    
+                         <div class="row mb-3">
+                            <label for="txt_addressCode" class="col-sm-2 col-form-label">เลขรหัสประจำบ้าน</label>
+                            <div class="col">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Address code" name="txt_addressCode" [(ngModel)]="txt_addressCode" readonly>
+                            </div>
+                            <label for="txt_addressCode" class="col-sm-3 col-form-label">(ตามทะเบียนราษฎรกระทรวงมหาดไทย)</label>
+                        </div>  
+                    
+                        <div class="row mb-3">
+                            <label for="syslctaddr_thaaddr" class="col-sm-2 col-form-label">ที่อยู่ตามทะเบียนบ้าน เลขที่</label>
+                            <div class="col-md-8">
+                              <input type="text" class="form-control" style="text-align:center;"  aria-label="Location thai address" name="syslctaddr_thaaddr" [(ngModel)]="syslctaddr_thaaddr" readonly>
+                            </div>
+                            <label for="syslctaddr_mu" class="col-sm-1 col-form-label">หมู่ที่</label>
+                            <div class="col-md-1">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Mu" name="syslctaddr_mu" [(ngModel)]="syslctaddr_mu" readonly>
+                            </div>
+                        </div> 
+    
+    
+                        <div class="row mb-3">
+                            <label for="syslctaddr_thasoi" class="col-sm-1 col-form-label">ตรอก/ซอย </label>
+                            <div class="col-md-3">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Soi" name="syslctaddr_thasoi" [(ngModel)]="syslctaddr_thasoi" readonly>
+                            </div>
+                            <label for="syslctaddr_tharoad" class="col-sm-1 col-form-label">ถนน </label>
+                            <div class="col-md-3">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Road" name="syslctaddr_tharoad" [(ngModel)]="syslctaddr_tharoad" readonly>
+                            </div>
+                            <label for="syslctaddr_thmblnm" class="col-sm-1 col-form-label">ตำบล/แขวง</label>
+                            <div class="col-md-3">
+                              <input type="text" class="form-control"  style="text-align:center;"  aria-label="Tambon" name="syslctaddr_thmblnm" [(ngModel)]="syslctaddr_thmblnm" readonly>
+                            </div>
+                        </div> 
+                     
+                        <div class="row mb-3">
+                            <label for="syslctaddr_amphrnm" class="col-sm-1 col-form-label">อำเภอ/เขต</label>
+                            <div class="col-md-3">
+                              <input type="text" class="form-control" style="text-align:center;"  aria-label="Amphor" name="syslctaddr_amphrnm" [(ngModel)]="syslctaddr_amphrnm" readonly>
+                            </div>
+                            <label for="syslctaddr_chngwtnm" class="col-sm-1 col-form-label">จังหวัด</label>
+                            <div class="col-md-3">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Province"  name="syslctaddr_chngwtnm" [(ngModel)]="syslctaddr_chngwtnm" readonly>
+                            </div>
+                            <label for="syslctaddr_zipcode" class="col-sm-1 col-form-label">รหัสไปรษณีย์</label>
+                            <div class="col-md-3">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Zipcode" name="syslctaddr_zipcode" [(ngModel)]="syslctaddr_zipcode" readonly>
+                            </div>
+                        </div> 
+    
+                        <div class="row mb-3">
+                            <label for="syslctaddr_tel" class="col-sm-1 col-form-label">โทรศัพท์ </label>
+                            <div class="col-md-2">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Phone" name="syslctaddr_tel" [(ngModel)]="syslctaddr_tel" readonly>
+                            </div>
+                            <label for="syslctaddr_fax" class="col-sm-2 col-form-label">โทรสาร(ถ้ามี)</label>
+                            <div class="col-md-2">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Fax"  name="syslctaddr_fax" [(ngModel)]="syslctaddr_fax" readonly>
+                            </div>
+                            <label for="syslctaddr_email" class="col-sm-1 col-form-label">อีเมล์ (ถ้ามี) </label>
+                            <div class="col-md-3">
+                              <input type="text" class="form-control"  style="text-align:center;" aria-label="Email" name="syslctaddr_email" [(ngModel)]="syslctaddr_email" readonly>
+                            </div>
+                        </div> 
+                     
+            
+                        
+              
+                        <!-- <button type="submit" class="btn btn-primary"  style="text-align:center;">ยืนยันคำขอ</button> -->
+                 </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h1 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <strong>ส่วนที่ 2 ข้อมูลที่ตั้งสถานที่นำเข้าหรือส่งออก</strong>        
+            </button>
+          </h1>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div class="card-body text-dark">                  
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-2 col-form-label">สถานที่ชื่อ</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                          </div>
+                    </div>
+  
+
+                
+             </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="accordion-item">
+          <h1 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <strong>ส่วนที่ 3 ข้อมูลการนำเข้า หรือส่งออก (โปรดกรอกเป็นภาษาอังกฤษ)</strong>
+            </button>
+          </h1>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div class="card-body text-dark">                  
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">ชื่อและที่อยู่ของผู้นำเข้า (Name and address of Importer)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">ประเทศ (Countrt)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">ชื่อและที่อยู่ของผู้ส่งออก(Name and address of Exporter)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">ประเทศ (Countrt)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">ชื่อและที่อยู่ของผู้ผลิต(Name and address of Manufacturer)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">ประเทศ (Countrt)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">โดยทาง (Airfreight/Seafreight etc.)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">กรณีนำเข้า โปรดระบุด่านตรวจขาเข้า (Port of Entry)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">กรณีส่งออก โปรดระบุด่านตรวจขาออก (Port of Export)</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">และด่านตรวจขาเข้า (Port of Entry) ของประเทศปลายทาง</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control"  style="text-align:center;" id="syslctaddr_thanameplace"  name="syslctaddr_thanameplace" [(ngModel)]="syslctaddr_thanameplace" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="syslctaddr_thanameplace" class="col-sm-5 col-form-label">กัญชง ที่ขอนำเข้าหรือส่งออก (Cannabis to be imported/exported)</label>
+                    </div>
+
+
+              
+                      <div class="row justify-content-center">
+                        <div class="col ">
+                  
+                      <button type="button" class="btn btn-primary" (click)="addRow()">เพิ่มแถว</button> 
+                      <div class="row">
+                  
+                  
+                      <!-- some code here - see full code at the end of this tutorial -->
+                      <table class="table table-striped table-bordered" style="text-align: center;">
+                        <thead>
+                            <tr>
+                                <th  style="width:1%">(ลำดับที่) Item No.</th>
+                                <th>(จำนวน) Quantity</th>
+                                <th>(ส่วนของกัญชง) Name of substances of Preparations</th>
+                                <th>(ปริมาณสารสำคัญ) Narcotic Drugs contained therein</th>
+                                <th>(ควบคุม) Schedule</th>
+                                <th>(ปริมาณ) Content</th>
+                                <th>(จำนวนรวม) Total Quantity of Narcotic Drugs</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                       <tr   *ngFor="let address of hempList; let i = index;">
+                          <!-- input fields inside the *ngFor -->
+                          <td>
+                             <!-- <label>Address</label> -->
+                             <input type="text" [(ngModel)]="address.id"
+                               name="address_{{address.id}}"/>
+                          </td>
+                          <td>
+                             <!-- <label>Street</label> -->
+                             <input type="text" [(ngModel)]="address.QUANTITY1" id="QUANTITY1"
+                               name="QUANTITY1" class="form-control"/>
+                          </td>
+                          <td>
+                             <!-- <label>City</label> -->
+                             <input type="text" [(ngModel)]="address.TRADE_NAME"
+                               name="TRADE_NAME"/>
+                          </td>
+                          <td>
+                            <!-- <label>City</label> -->
+                            <input type="text" [(ngModel)]="address.NARCOTIC_NAME"
+                              name="NARCOTIC_NAME"/>
+                          </td>
+                          <td>
+                            <!-- <label>City</label> -->
+                            <input type="text" [(ngModel)]="address.DRUG_TYPE_ID"
+                              name="DRUG_TYPE_ID"/>
+                          </td>
+                          <td>
+                            <!-- <label>City</label> -->
+                            <input type="text" [(ngModel)]="address.CONTENT_QUANTITY"
+                              name="CONTENT_QUANTITY"/>
+                          </td>
+                          <td>
+                            <!-- <label>City</label> -->
+                            <input type="text" [(ngModel)]="address.TOTAL_QUANTITY"
+                              name="TOTAL_QUANTITY"/>
+                          </td>
+              
+                          <td>
+                            <!-- <label>City</label> -->
+                            <!-- <input type="text" [(ngModel)]="address.totalQuantity"
+                              name="city_{{address.id}}"/> -->
+                              <button type="button" class="btn btn-warning btn-sm" (click)="editRow(i)" disabled>แก้ไข</button>
+                              <button type="button" class="btn btn-danger btn-sm" (click)="removeRow(i)">ลบ</button>
+                  
+                           
+                          </td>
+                      
+                          <!-- <td>
+                             <select [(ngModel)]="address.country" name="country_{{address.id}}" placeholder="India">
+                                   <option value="india">India</option>
+                                   <option value="usa">USA</option>
+                                   <option value="england">England</option>
+                             </select>
+                          </td> -->
+                  
+                       </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                       <button type="submit"  class="btn btn-primary">ยื่นข้อมูล</button> 
+                     
+                    </div>
+                      </div>
+                    
+  
+
+                
+             </div>
+            </div>
+          </div>
+        </div>  
+    </div>
+
+
+      
+
+    <!-- <div class="form-group row" >
+      <label for="IDENTIFY" class="col-sm-4 col-form-label">คำอธิบาย</label>
+      <div class="col-sm-8">
+        <textarea class="form-control" id="IDENTIFY" required name="IDENTIFY" [(ngModel)]= "IDENTIFY" placeholder="หน้าที่"></textarea>
+      </div>
+
+
+      <div class="col-sm-8">
+        <textarea class="form-control" id="IDENTIFY2" required name="IDENTIFY2" [(ngModel)]= "IDENTIFY2" placeholder="หน้าที่"></textarea>
+      </div> 
+
+       <div class="col-sm-8">
+        <textarea class="form-control" id="IDENTIFY3" required name="IDENTIFY3" [(ngModel)]= "IDENTIFY3" placeholder="หน้าที่"></textarea>
+      </div> 
+    </div> -->
+<!-- 
+    <table class="table table-striped table-bordered">
+      <thead>
+          <tr>
+              <th>ลำดับที่</th>
+              <th>จำนวน</th>
+              <th>ส่วนของกัญชง</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+            <tr *ngFor="let field of fieldArray; let i = index">
+              <td>
+                  <input [(ngModel)]="field.code" class="form-control" type="text" name="{{field.code}}" [ngModelOptions]="{standalone: true}" />
+              </td>
+              <td>
+                  <input [(ngModel)]="field.name" class="form-control" type="text" name="{{field.name}}" [ngModelOptions]="{standalone: true}"/>
+              </td>
+              <td>
+                  <input [(ngModel)]="field.price" class="form-control" type="text" name="{{field.price}}"[ngModelOptions]="{standalone: true}" />
+              </td>
+              <td>
+                  <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">ลบข้อมูล</button>
+              </td>
+          </tr>  
+          <tr>
+              <td>
+                  <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.code" name="newAttributeCode" [ngModelOptions]="{standalone: true}"/>
+              </td>
+              <td>
+                  <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.name" name="newAttributeName" [ngModelOptions]="{standalone: true}"/>
+              </td>
+              <td>
+                  <input class="form-control" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.price" name="newAttributePrice" [ngModelOptions]="{standalone: true}"/>
+              </td>
+              <td>
+                  <button class="btn btn-default" type="button" (click)="addFieldValue()">เพิ่มข้อมูล</button>
+              </td>
+          </tr>
+      </tbody>
+  </table> -->
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">กลับไปหน้าหลัก</button>
+      <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+    </div>
+  </form> 
+</div>
